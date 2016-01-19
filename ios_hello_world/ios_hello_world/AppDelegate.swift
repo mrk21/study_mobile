@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  hello-ios
+//  ios_hello_world
 //
-//  Created by Yuichi Murata on 2016/01/18.
+//  Created by Yuichi Murata on 2016/01/19.
 //  Copyright © 2016年 Yuichi Murata. All rights reserved.
 //
 

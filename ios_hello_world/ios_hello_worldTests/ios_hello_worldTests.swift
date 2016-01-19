@@ -1,15 +1,15 @@
 //
-//  hello_iosTests.swift
-//  hello-iosTests
+//  ios_hello_worldTests.swift
+//  ios_hello_worldTests
 //
-//  Created by Yuichi Murata on 2016/01/18.
+//  Created by Yuichi Murata on 2016/01/19.
 //  Copyright © 2016年 Yuichi Murata. All rights reserved.
 //
 
 import XCTest
-@testable import hello_ios
+@testable import ios_hello_world
 
-class hello_iosTests: XCTestCase {
+class ios_hello_worldTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

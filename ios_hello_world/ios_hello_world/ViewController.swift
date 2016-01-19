@@ -1,8 +1,8 @@
 //
 //  ViewController.swift
-//  hello-ios
+//  ios_hello_world
 //
-//  Created by Yuichi Murata on 2016/01/18.
+//  Created by Yuichi Murata on 2016/01/19.
 //  Copyright © 2016年 Yuichi Murata. All rights reserved.
 //
 
@@ -11,10 +11,10 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBAction func tapHandler(sender: AnyObject) {
-        myTextField.text = "This is modified."
+        self.textField.text = "Hello world!";
     }
     
-    @IBOutlet weak var myTextField: UITextField!
+    @IBOutlet weak var textField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
