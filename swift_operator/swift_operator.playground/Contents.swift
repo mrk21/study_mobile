@@ -15,3 +15,9 @@ value_operation1+=2; print(value_operation1) // increment
 print(--value_operation1)  // decrement
 print(value_operation1--)  // decrement
 value_operation1-=3; print(value_operation1) // decrement
+
+// Overflow operator
+// It allows to overflow the value of a variable.
+var value_operator2 = Int8.max
+// print(value_operator2 + 1) // error: overflow
+print(value_operator2 &+ 1) // OK: -128
