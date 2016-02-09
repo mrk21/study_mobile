@@ -44,3 +44,19 @@ print(0 !=  false)
 print(0 !== false)
 print(1 !=  true)
 print(1 !== true)
+
+
+// Bit operator(same as C language)
+let value_bit1: UInt8 = 0b00001111
+let value_bit2 = ~value_bit1 // 0b11110000
+print(String(format: "%02x", value_bit1))
+print(String(format: "%02x", value_bit2))
+
+print(String(format: "%02x", 0b00001111 & 0b00111100)) // AND
+print(String(format: "%02x", 0b00001111 | 0b00111100)) // OR
+print(String(format: "%02x", 0b00001111 ^ 0b00111100)) // XOR
+
+print(String(format: "%04x", UInt(0b11001100) << 2))
+print(String(format: "%04x", UInt(0b11001100) >> 2))
+print(String(format: "%04x",  Int(0b11001100) << 2))
+print(String(format: "%04x",  Int(0b11001100) >> 2))
