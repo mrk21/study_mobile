@@ -46,3 +46,14 @@ var value_conversion_2 = 1
 var value_conversion_3 = 1.5
 //var value_conversion_4 = value_conversion_2 + value_conversion_3 // Error: Can not implecit convert
 var value_conversion_5 = Double(value_conversion_2) + value_conversion_3
+
+
+// Tuple type
+let value_tuple1 = ("a", 1)
+print("\(value_tuple1.0), \(value_tuple1.1)")
+
+var (value_tuple_element1, value_tuple_element2) = ("a", 1)
+print(value_tuple_element1, value_tuple_element2)
+
+let value_tuple2 = (a:1)
+print("\(value.a)")
