@@ -55,5 +55,18 @@ print("\(value_tuple1.0), \(value_tuple1.1)")
 var (value_tuple_element1, value_tuple_element2) = ("a", 1)
 print(value_tuple_element1, value_tuple_element2)
 
-let value_tuple2 = (a:1)
-print("\(value.a)")
+var value_tuple2 = (a:1)
+print("\(value_tuple2.a)")
+
+
+// Array type
+var value_array1: [Int] = [1,2,3]
+print(value_array1)
+print(value_array1[0])
+
+var value_array2 = Array(count: 4, repeatedValue: 2)
+print(value_array2)
+
+var value_array3: Array<Any> = [1, 1.4, "a"]
+print(value_array3)
+print(1 + (value_array3[0] as! Int))
