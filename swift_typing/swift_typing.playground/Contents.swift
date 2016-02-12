@@ -55,8 +55,8 @@ print("\(value_tuple1.0), \(value_tuple1.1)")
 var (value_tuple_element1, value_tuple_element2) = ("a", 1)
 print(value_tuple_element1, value_tuple_element2)
 
-var value_tuple2 = (a:1)
-print("\(value_tuple2.a)")
+var value_tuple2 = (a: 1, b: 2)
+print("\(value_tuple2.b)")
 
 
 // Array type
@@ -64,9 +64,21 @@ var value_array1: [Int] = [1,2,3]
 print(value_array1)
 print(value_array1[0])
 
+/// fill
 var value_array2 = Array(count: 4, repeatedValue: 2)
 print(value_array2)
 
+/// Any element types
 var value_array3: Array<Any> = [1, 1.4, "a"]
 print(value_array3)
 print(1 + (value_array3[0] as! Int))
+
+/// Function element types
+let add = { (a: Double, b: Double) -> Double in return a + b }
+let sub = { (a: Double, b: Double) -> Double in return a - b }
+var value_array4: [(Double, Double) -> Double] = [add, sub]
+print(value_array4[1](10, 20))
+
+/// Empty array
+var value_array5: [String] = []
+var value_array6: Array<String> = []
