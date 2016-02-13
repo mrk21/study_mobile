@@ -82,3 +82,11 @@ print(value_array4[1](10, 20))
 /// Empty array
 var value_array5: [String] = []
 var value_array6: Array<String> = []
+
+/// Addition
+var value_array7: [Double] = [1,2,3]
+value_array7.append(4)
+value_array7 += [5,6]
+//value_array7.append("7") // type error
+value_array7.insert(1.5, atIndex: 1)
+print(value_array7)
