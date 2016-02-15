@@ -96,3 +96,32 @@ var value_array8 = [1,2,3,4,5]
 print(value_array8[0])
 print(value_array8[1..<3]) // It does not contain the element of the end index
 print(value_array8[1...3]) // It contains the element of the end index
+
+/// Remove elements
+var value_array9 = [1,2,3,4,5,6,7,8,9]
+value_array9.removeLast()
+print(value_array9)
+value_array9.removeFirst()
+print(value_array9)
+value_array9.removeAtIndex(1)
+print(value_array9)
+value_array9.removeRange(2...4)
+print(value_array9)
+value_array9.removeAll()
+print(value_array9)
+
+/// Iterate elements
+var value_array10 = [1,2,3,4]
+for v in value_array10 {
+    print(v)
+}
+for (i,v) in value_array10.enumerate() {
+    print(i,v)
+}
+
+/// Clone
+var value_array11 = [1,2,3]
+var value_array12 = value_array11 // deep copy
+value_array11.append(4)
+print(value_array11)
+print(value_array12)
