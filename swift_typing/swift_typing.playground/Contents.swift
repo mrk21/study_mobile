@@ -125,3 +125,12 @@ var value_array12 = value_array11 // deep copy
 value_array11.append(4)
 print(value_array11)
 print(value_array12)
+
+
+// Dictionary type
+let value_dictionary1: Dictionary<String, Int> = ["a": 1, "b": 2, "c": 3]
+print(value_dictionary1["a"]) // optional(1)
+print(value_dictionary1["d"]) // nil
+
+let value_dictionary2: [String: Int] = ["a": 1, "b": 2, "c": 3]
+print(value_dictionary2["b"])
