@@ -134,3 +134,11 @@ print(value_dictionary1["d"]) // nil
 
 let value_dictionary2: [String: Int] = ["a": 1, "b": 2, "c": 3]
 print(value_dictionary2["b"])
+
+/// Add, Modify
+var value_dictionary3: [String: Float] = ["a": 1, "b": 2, "c": 3]
+value_dictionary3["d"] = 4
+value_dictionary3["b"] = 2.1
+print(value_dictionary3.updateValue(3.1, forKey: "c"))
+print(value_dictionary3.updateValue(5.0, forKey: "e"))
+print(value_dictionary3)
