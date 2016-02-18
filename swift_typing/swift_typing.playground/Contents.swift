@@ -128,6 +128,7 @@ print(value_array12)
 
 
 // Dictionary type
+// A dictionary does not keep keys order.
 let value_dictionary1: Dictionary<String, Int> = ["a": 1, "b": 2, "c": 3]
 print(value_dictionary1["a"]) // optional(1)
 print(value_dictionary1["d"]) // nil
@@ -139,6 +140,41 @@ print(value_dictionary2["b"])
 var value_dictionary3: [String: Float] = ["a": 1, "b": 2, "c": 3]
 value_dictionary3["d"] = 4
 value_dictionary3["b"] = 2.1
+print(value_dictionary3.count)
 print(value_dictionary3.updateValue(3.1, forKey: "c"))
+print(value_dictionary3.count)
 print(value_dictionary3.updateValue(5.0, forKey: "e"))
+print(value_dictionary3.count)
 print(value_dictionary3)
+
+/// Remove
+var value_dictionary4 = ["a": 1, "b": 2, "c": 3]
+print(value_dictionary4.count)
+value_dictionary4["b"] = nil
+print(value_dictionary4.count)
+print(value_dictionary4)
+print(value_dictionary4.removeValueForKey("a"))
+print(value_dictionary4.count)
+value_dictionary4.removeAll()
+value_dictionary4 = [:] // reinitialize
+print(value_dictionary4.count)
+print(value_dictionary4)
+
+/// Iterate
+var value_dictionary5 = ["a": 1, "b": 2, "c": 3]
+for (key, value) in value_dictionary5 {
+    print("\(key): \(value)")
+}
+for key in value_dictionary5.keys {
+    print(key)
+}
+for value in value_dictionary5.values {
+    print(value)
+}
+
+/// Copy
+var value_dictionary6 = ["a": 1, "b": 2, "c": 3]
+var value_dictionary7 = value_dictionary6 // Deep copy
+value_dictionary7["d"] = 4
+print(value_dictionary6)
+print(value_dictionary7)
