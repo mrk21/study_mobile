@@ -178,3 +178,20 @@ var value_dictionary7 = value_dictionary6 // Deep copy
 value_dictionary7["d"] = 4
 print(value_dictionary6)
 print(value_dictionary7)
+
+
+// Optional type
+var value_optional1: String?
+value_optional1 = nil // OK
+var value_optional2: String
+// value_optional2 = nil // Error
+
+/// Optional binding
+var value_optional3: Int? = 100
+print(value_optional3)
+if let v = value_optional3 {
+    print(v) // Int type
+}
+else {
+    print("nil")
+}
