@@ -195,3 +195,29 @@ if let v = value_optional3 {
 else {
     print("nil")
 }
+
+/// Unwrap
+var value_optional4: Int?
+value_optional4 = 100
+print(value_optional4!)
+
+func function_optional1(v: Int) -> Int {
+    return v*2
+}
+//print(function_optional1(value_optional4)) // Type error: A value of optional type does not convert implicitly
+
+print(function_optional1(value_optional4!)) // OK
+var value_optional5: Int?
+//print(value_optional5!) // Error: An empty value of optional type can not use unwrap operator
+
+/// Optional type for Array
+var value_optional6: Array<Int>?
+value_optional6 = [1,2,3]
+value_optional6!.append(4)
+print(value_optional6!)
+
+/// Optional type for Dictionary
+var value_optional7: Dictionary<String, Int>?
+value_optional7 = ["a": 1, "b": 2, "c": 3]
+value_optional7!["d"] = 4
+print(value_optional7!)
