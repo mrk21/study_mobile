@@ -221,3 +221,9 @@ var value_optional7: Dictionary<String, Int>?
 value_optional7 = ["a": 1, "b": 2, "c": 3]
 value_optional7!["d"] = 4
 print(value_optional7!)
+
+/// Implicit optional type
+var value_optional8: Array<Int>!
+value_optional8 = [1,2,3]
+value_optional8.append(4)
+print(value_optional8)
