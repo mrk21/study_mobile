@@ -227,3 +227,9 @@ var value_optional8: Array<Int>!
 value_optional8 = [1,2,3]
 value_optional8.append(4)
 print(value_optional8)
+
+/// Nil coalescing operator
+var value_optional9: Int?
+print(value_optional9 ?? "-")
+value_optional9 = 1
+print(value_optional9 ?? "-")
