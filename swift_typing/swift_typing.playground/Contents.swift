@@ -233,3 +233,14 @@ var value_optional9: Int?
 print(value_optional9 ?? "-")
 value_optional9 = 1
 print(value_optional9 ?? "-")
+
+
+// Type alias
+typealias Number = Int
+var value_type_alias1 = 100
+print(value_type_alias1)
+var value_type_alias2: Int = value_type_alias1 // OK
+
+typealias ErrorCode = (Int, String)
+var value_type_alias3: ErrorCode = (500, "Internal server error")
+print(value_type_alias3)
