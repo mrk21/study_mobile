@@ -244,3 +244,23 @@ var value_type_alias2: Int = value_type_alias1 // OK
 typealias ErrorCode = (Int, String)
 var value_type_alias3: ErrorCode = (500, "Internal server error")
 print(value_type_alias3)
+
+
+// Enumeration type
+enum EnumType1 {
+    case Blue
+    case Yellow
+    case Red
+}
+var value_enum1 = EnumType1.Blue
+print(value_enum1)
+
+/// Oneline definition
+enum EnumType2 {
+    case Blue, Yellow, Red
+}
+
+/// Internal value
+print(EnumType2.Blue.hashValue)
+print(EnumType2.Yellow.hashValue)
+print(EnumType2.Red.hashValue)
