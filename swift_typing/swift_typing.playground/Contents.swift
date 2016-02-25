@@ -264,3 +264,22 @@ enum EnumType2 {
 print(EnumType2.Blue.hashValue)
 print(EnumType2.Yellow.hashValue)
 print(EnumType2.Red.hashValue)
+
+/// Method definition
+enum EnumType3 {
+    case Blue
+    case Yellow
+    case Red
+    
+    func meaning() -> String {
+        switch(self) {
+        case EnumType3.Blue:
+            return "go"
+        case EnumType3.Yellow:
+            return "caution"
+        case EnumType3.Red:
+            return "stop"
+        }
+    }
+}
+print(EnumType3.Yellow.meaning())
