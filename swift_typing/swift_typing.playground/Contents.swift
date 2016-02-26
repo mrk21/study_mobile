@@ -283,3 +283,31 @@ enum EnumType3 {
     }
 }
 print(EnumType3.Yellow.meaning())
+
+/// Association value
+enum EnumType4 {
+    case Bicycle
+    case Motorbike(Int)
+    case Car(Int, Bool)
+}
+
+var value_enum2 = EnumType4.Bicycle
+value_enum2 = EnumType4.Motorbike(100)
+value_enum2 = EnumType4.Car(1600, true)
+
+switch (value_enum2) {
+case EnumType4.Bicycle:
+    print("bicycle")
+case EnumType4.Motorbike(let engine) where engine <= 50:
+    print("motorbike: 1")
+case EnumType4.Motorbike(let engine) where engine <= 125:
+    print("motorbike: 2")
+case EnumType4.Motorbike(let engine) where engine <= 400:
+    print("motorbike: 3")
+case EnumType4.Motorbike(let engine):
+    print("motorbike: 4")
+case EnumType4.Car(let engine, let automatic) where engine <= 660:
+    print("car: 1, automatic?: \(automatic)")
+case EnumType4.Car(let engine, let automatic):
+    print("car: 2, automatic?: \(automatic)")
+}
