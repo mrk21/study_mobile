@@ -24,3 +24,17 @@ for var i=0; ; ++i {
     if i < value_for1.count { continue }
     print("This message is not displayed.")
 }
+
+/// for in
+for value in value_for1 {
+    print(value)
+}
+
+var value_for2 = ["a": 1, "b": 2, "c": 3]
+
+for (key, value) in value_for2 {
+    print("\(key) => \(value)")
+}
+for pair in value_for2 {
+    print("\(pair.0) => \(pair.1)")
+}
