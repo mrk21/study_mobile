@@ -13,6 +13,7 @@ else {
     print("3")
 }
 
+
 // for
 var value_for1 = [1,2,3]
 for var i=0; i<value_for1.count; ++i {
@@ -38,3 +39,20 @@ for (key, value) in value_for2 {
 for pair in value_for2 {
     print("\(pair.0) => \(pair.1)")
 }
+
+
+// while
+var value_while1 = 0
+
+while value_while1 <= 10 {
+    print(value_while1)
+    value_while1 += 2
+}
+
+/// repeat while
+var value_while2 = 0
+
+repeat {
+    print(value_while2)
+    value_while2 += 2
+} while value_while2 <= 10
