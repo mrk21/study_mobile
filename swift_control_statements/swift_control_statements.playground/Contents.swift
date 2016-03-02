@@ -56,3 +56,15 @@ repeat {
     print(value_while2)
     value_while2 += 2
 } while value_while2 <= 10
+
+
+// label
+var value_label1 = [1,2,3,4,5]
+
+labelOuterLoop: for value in value_label1 {
+    while true {
+        print(value)
+        if value == 5 { break labelOuterLoop }
+        continue labelOuterLoop
+    }
+}
