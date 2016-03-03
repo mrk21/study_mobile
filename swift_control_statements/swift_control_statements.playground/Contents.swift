@@ -68,3 +68,18 @@ labelOuterLoop: for value in value_label1 {
         continue labelOuterLoop
     }
 }
+
+
+// switch
+var value_switch1 = 98
+
+switch value_switch1 {
+case 0..<50:
+    print("0..<50")
+case 50..<100:
+    print("50..<100")
+case 100..<150:
+    print("100..<100")
+default:
+    print("other")
+}
