@@ -83,3 +83,36 @@ case 100..<150:
 default:
     print("other")
 }
+
+/// use where
+switch arc4random() % 100 {
+case let n where n == 0:
+    print("n == 0")
+case let n where n < 10:
+    print("n < 10")
+case let n where n < 50:
+    print("10 < n < 50")
+case let n where n < 80:
+    print("50 < n < 80")
+default:
+    print("other")
+}
+
+/// use tuple
+/// This is like pattern matching.
+var value_switch2: (UInt32, UInt32?)
+value_switch2 = (
+    arc4random() % 3,
+    arc4random() % 10 == 1 ? nil : arc4random() % 400
+)
+
+switch value_switch2 {
+case (1,_):
+    print("(1,_)")
+case (2, nil):
+    print("(2, nil)")
+case let (2, second):
+    print("let (2, second) => second: \(second!)")
+default:
+    print("other")
+}
