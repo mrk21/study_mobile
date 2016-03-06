@@ -2,12 +2,12 @@
 
 import UIKit
 
-func func1(){
+func func1() {
     print("a")
 }
 func1()
 
-func func2(v: String){
+func func2(v: String) {
     print(v)
 }
 func2("a")
@@ -16,3 +16,10 @@ func func3(v: String) -> String {
     return "v: \(v)"
 }
 print(func3("a"))
+
+
+/// Outer function's arguments
+func func4(count c: Int) {
+    print(c)
+}
+func4(count: 4)
