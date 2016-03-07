@@ -23,3 +23,11 @@ func func4(count c: Int) {
     print(c)
 }
 func4(count: 4)
+
+
+/// Default parameter
+func func5(value: Int = 4) {
+    print(value)
+}
+func5(2)
+func5()
