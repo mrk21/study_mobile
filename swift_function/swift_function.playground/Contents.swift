@@ -33,15 +33,32 @@ func5(2)
 func5()
 
 
+/// variable parameters
+func func6(values: Int...) {
+    print(values)
+}
+func6(1)
+func6(1,2)
+func6(1,2,3)
+
+//// variable parameters with label parameters
+func func7(values: Int..., value1: Int, value2: Int) {
+    print("\(values), value1: \(value1), value2: \(value2)")
+}
+func7(1, value1: 10, value2: 11)
+func7(1,2, value1: 10, value2: 11)
+func7(1,2,3, value1: 10, value2: 11)
+
+
 /// Constant parameters and variable parameters
-func func6(value: Int) {
+func func8(value: Int) {
     // value += 3 // Error
     print(value)
 }
-func6(1)
+func8(1)
 
-func func7(var value: Int) {
+func func9(var value: Int) {
     value += 3 // OK
     print(value)
 }
-func7(1)
+func9(1)
