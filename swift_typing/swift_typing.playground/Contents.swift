@@ -311,3 +311,17 @@ case EnumType4.Car(let engine, let automatic) where engine <= 660:
 case EnumType4.Car(let engine, let automatic):
     print("car: 2, automatic?: \(automatic)")
 }
+
+/// Function Type
+var value_func1: (Int, Int) -> Int
+
+func func_func1(v1: Int, v2: Int) -> Int {
+    return v1 * v2
+}
+value_func1 = func_func1
+print(value_func1(2,3))
+
+func func_func2(value: String) {
+    print(value)
+}
+// value_func1 = func_func2 // Error
