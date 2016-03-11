@@ -62,3 +62,12 @@ func func9(var value: Int) {
     print(value)
 }
 func9(1)
+
+
+/// Lambda
+func func10(a: Int, b: Int, f: (Int, Int) -> Int) -> Int {
+    return f(a, b)
+}
+print(func10(2, b: 3, f: {(v1: Int, v2: Int) in
+    return v1 * v2
+}))
