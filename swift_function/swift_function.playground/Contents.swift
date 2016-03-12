@@ -74,3 +74,14 @@ print(func10(2, b: 3, f: {(v1, v2) in v1 * v2}))
 print(func10(2, b: 3, f: { $0 * $1 }))
 print(func10(2, b: 3, f: *))
 print(func10(2, b: 3){ $0 * $1 })
+
+
+/// Nested Function
+func func11() {
+    func display() {
+        print("a")
+    }
+    display()
+}
+func11()
+// display() // Error
