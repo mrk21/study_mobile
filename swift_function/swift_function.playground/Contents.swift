@@ -68,6 +68,9 @@ func9(1)
 func func10(a: Int, b: Int, f: (Int, Int) -> Int) -> Int {
     return f(a, b)
 }
-print(func10(2, b: 3, f: {(v1: Int, v2: Int) in
-    return v1 * v2
-}))
+print(func10(2, b: 3, f: {(v1: Int, v2: Int) in return v1 * v2}))
+print(func10(2, b: 3, f: {(v1, v2) in return v1 * v2}))
+print(func10(2, b: 3, f: {(v1, v2) in v1 * v2}))
+print(func10(2, b: 3, f: { $0 * $1 }))
+print(func10(2, b: 3, f: *))
+print(func10(2, b: 3){ $0 * $1 })
