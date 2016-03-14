@@ -85,3 +85,18 @@ func func11() {
 }
 func11()
 // display() // Error
+
+
+/// Clojure
+func func12(v1: Int) -> (Int) -> Int {
+    func f(v2: Int) -> Int {
+        return v1 * v2
+    }
+    return f
+}
+print(func12(3)(4))
+
+func func13(v1: Int) -> (Int) -> Int {
+    return { v1 * $0 }
+}
+print(func13(3)(4))
