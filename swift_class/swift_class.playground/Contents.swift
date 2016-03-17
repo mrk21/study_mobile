@@ -31,3 +31,21 @@ class Class2 {
     }
 }
 print(Class2(value1: 12).value1)
+
+
+/// Getter, Setter
+class Class3 {
+    var _value: Int = 1
+    var value: Int {
+        get {
+            return self._value * 100
+        }
+        set {
+            self._value = newValue
+        }
+    }
+}
+var valueClass3 = Class3()
+print(valueClass3.value)
+valueClass3.value = 2
+print(valueClass3.value)
