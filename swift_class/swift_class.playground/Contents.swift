@@ -33,19 +33,43 @@ class Class2 {
 print(Class2(value1: 12).value1)
 
 
-/// Getter, Setter
+/// Computed Properties
 class Class3 {
-    var _value: Int = 1
-    var value: Int {
+    var firstName: String = ""
+    var lastName: String = ""
+    var name: String {
         get {
-            return self._value * 100
+            return self.firstName + " " + self.lastName
         }
         set {
-            self._value = newValue
+            var components: Array<String> = newValue.componentsSeparatedByString(" ")
+            self.firstName = components[0]
+            self.lastName = components[1]
         }
     }
+    init(name: String) {
+        self.name = name
+    }
 }
-var valueClass3 = Class3()
-print(valueClass3.value)
-valueClass3.value = 2
-print(valueClass3.value)
+var valueClass3 = Class3(name: "Hoge Foo")
+print(valueClass3.name)
+print("firstName: \(valueClass3.firstName), lastName: \(valueClass3.lastName)")
+valueClass3.name = "Fuga Bar"
+print(valueClass3.name)
+print("firstName: \(valueClass3.firstName), lastName: \(valueClass3.lastName)")
+
+//// Read-Only computed properties
+class Class4 {
+    var w: Int = 0
+    var h: Int = 0
+    var square: Int {
+        return w * h
+    }
+}
+var valueClass4 = Class4()
+valueClass4.w = 2
+valueClass4.h = 3
+print(valueClass4.square)
+//valueClass4.square = 10 // Error
+valueClass4.w = 5
+print(valueClass4.square)
