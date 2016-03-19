@@ -73,3 +73,12 @@ print(valueClass4.square)
 //valueClass4.square = 10 // Error
 valueClass4.w = 5
 print(valueClass4.square)
+
+//// Decision of whether is the same instance
+var valueClass5 = Class4()
+var valueClass6 = valueClass5
+var valueClass7 = Class4()
+
+print(valueClass5 === valueClass6)
+print(valueClass5 === valueClass7)
+print(valueClass5 !== valueClass7)
