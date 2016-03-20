@@ -82,3 +82,10 @@ var valueClass7 = Class4()
 print(valueClass5 === valueClass6)
 print(valueClass5 === valueClass7)
 print(valueClass5 !== valueClass7)
+
+// Struct
+struct Struct1 {
+    var value: Int = 1
+}
+print(Struct1())
+print(Struct1(value: 2))
