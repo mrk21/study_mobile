@@ -89,3 +89,13 @@ struct Struct1 {
 }
 print(Struct1())
 print(Struct1(value: 2))
+
+/// Copy
+struct Struct2 {
+    var value: Int
+}
+var valueStruct1 = Struct2(value: 3)
+var valueStruct2 = valueStruct1
+valueStruct2.value = 5
+print(valueStruct1)
+print(valueStruct2)
