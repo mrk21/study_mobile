@@ -74,14 +74,28 @@ print(valueClass4.square)
 valueClass4.w = 5
 print(valueClass4.square)
 
-//// Decision of whether is the same instance
-var valueClass5 = Class4()
-var valueClass6 = valueClass5
-var valueClass7 = Class4()
+//// Property Observers
+class Class5 {
+    var value: Int = 0 {
+        willSet {
+            print("willSet: \(self.value) => \(newValue)")
+        }
+        didSet {
+            print("didSet: \(oldValue) => \(self.value)")
+        }
+    }
+}
+var valueClass5 = Class5()
+valueClass5.value = 2
 
-print(valueClass5 === valueClass6)
-print(valueClass5 === valueClass7)
-print(valueClass5 !== valueClass7)
+//// Decision of whether is the same instance
+var valueClass6 = Class4()
+var valueClass7 = valueClass5
+var valueClass8 = Class4()
+
+print(valueClass6 === valueClass7)
+print(valueClass6 === valueClass8)
+print(valueClass6 !== valueClass8)
 
 // Struct
 struct Struct1 {
