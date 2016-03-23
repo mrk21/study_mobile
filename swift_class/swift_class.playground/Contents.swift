@@ -88,14 +88,28 @@ class Class5 {
 var valueClass5 = Class5()
 valueClass5.value = 2
 
-//// Decision of whether is the same instance
-var valueClass6 = Class4()
-var valueClass7 = valueClass5
-var valueClass8 = Class4()
 
-print(valueClass6 === valueClass7)
-print(valueClass6 === valueClass8)
-print(valueClass6 !== valueClass8)
+//// Lazy Property
+class Class6 {
+    init() {
+        print("property initialized")
+    }
+}
+class Class7 {
+    lazy var value = Class6()
+}
+var valueClass6 = Class7()
+print("initialized")
+print(valueClass6.value)
+
+//// Decision of whether is the same instance
+var valueClass7 = Class4()
+var valueClass8 = valueClass5
+var valueClass9 = Class4()
+
+print(valueClass7 === valueClass8)
+print(valueClass7 === valueClass9)
+print(valueClass7 !== valueClass9)
 
 // Struct
 struct Struct1 {
