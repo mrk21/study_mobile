@@ -88,7 +88,6 @@ class Class5 {
 var valueClass5 = Class5()
 valueClass5.value = 2
 
-
 //// Lazy Property
 class Class6 {
     init() {
@@ -101,6 +100,16 @@ class Class7 {
 var valueClass6 = Class7()
 print("initialized")
 print(valueClass6.value)
+
+//// Type Properties
+class Class8 {
+    static var value1 = 2
+    static var value2: Int {
+        return value1 * 2
+    }
+}
+print(Class8.value1)
+print(Class8.value2)
 
 //// Decision of whether is the same instance
 var valueClass7 = Class4()
