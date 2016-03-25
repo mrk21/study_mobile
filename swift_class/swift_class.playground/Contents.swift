@@ -32,8 +32,8 @@ class Class2 {
 }
 print(Class2(value1: 12).value1)
 
-
-/// Computed Properties
+/// Properties
+//// Computed Properties
 class Class3 {
     var firstName: String = ""
     var lastName: String = ""
@@ -111,7 +111,7 @@ class Class8 {
 print(Class8.value1)
 print(Class8.value2)
 
-//// Decision of whether is the same instance
+/// Decision of whether is the same instance
 var valueClass7 = Class4()
 var valueClass8 = valueClass5
 var valueClass9 = Class4()
@@ -119,6 +119,16 @@ var valueClass9 = Class4()
 print(valueClass7 === valueClass8)
 print(valueClass7 === valueClass9)
 print(valueClass7 !== valueClass9)
+
+/// Methods
+//// Instance Method
+class Class9 {
+    func f1() {
+        print("Class9#f1()")
+    }
+}
+Class9().f1()
+
 
 // Struct
 struct Struct1 {
