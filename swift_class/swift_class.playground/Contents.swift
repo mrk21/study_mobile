@@ -126,8 +126,20 @@ class Class9 {
     func f1() {
         print("Class9#f1()")
     }
+    func f2(a: Int) {
+        print(a)
+    }
+    func f3(a: Int, b: Int, c: Int) {
+        print(a, b, c)
+    }
+    func f4(a: Int, _ b: Int, _ c: Int) {
+        print(a, b, c)
+    }
 }
 Class9().f1()
+Class9().f2(1)
+Class9().f3(1, b: 2, c: 3)
+Class9().f4(1, 2, 3)
 
 
 // Struct
