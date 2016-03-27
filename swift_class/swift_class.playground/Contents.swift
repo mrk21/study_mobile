@@ -32,6 +32,25 @@ class Class2 {
 }
 print(Class2(value1: 12).value1)
 
+
+// Struct
+struct Struct1 {
+    var value: Int = 1
+}
+print(Struct1())
+print(Struct1(value: 2))
+
+/// Copy
+struct Struct2 {
+    var value: Int
+}
+var valueStruct1 = Struct2(value: 3)
+var valueStruct2 = valueStruct1
+valueStruct2.value = 5
+print(valueStruct1)
+print(valueStruct2)
+
+
 /// Properties
 //// Computed Properties
 class Class3 {
@@ -142,19 +161,32 @@ Class9().f3(1, b: 2, c: 3)
 Class9().f4(1, 2, 3)
 
 
-// Struct
-struct Struct1 {
-    var value: Int = 1
+//// Mutating Methods (for Struct and Enum)
+struct MutatingMethodStruct {
+    var value = 1
+    // Error
+    //func set() {
+    //    self.value = 2
+    // }
+    mutating func set() {
+        self.value = 2
+    }
 }
-print(Struct1())
-print(Struct1(value: 2))
+var mutatingMethodStruct = MutatingMethodStruct()
+print(mutatingMethodStruct.value)
+mutatingMethodStruct.set()
+print(mutatingMethodStruct.value)
 
-/// Copy
-struct Struct2 {
-    var value: Int
+///// Assign self
+enum MutatingMethodEnum {
+    case State1, State2
+    mutating func transition() {
+        self = self == State1 ? State2 : State1
+    }
 }
-var valueStruct1 = Struct2(value: 3)
-var valueStruct2 = valueStruct1
-valueStruct2.value = 5
-print(valueStruct1)
-print(valueStruct2)
+var currentState = MutatingMethodEnum.State1
+print(currentState) // State1
+currentState.transition()
+print(currentState) // State2
+currentState.transition()
+print(currentState) // State1
