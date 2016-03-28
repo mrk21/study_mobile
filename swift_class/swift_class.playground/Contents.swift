@@ -190,3 +190,12 @@ currentState.transition()
 print(currentState) // State2
 currentState.transition()
 print(currentState) // State1
+
+//// Static Methods
+class StaticMethod {
+    static var value = 1
+    static func displayValue() {
+        print(self.value)
+    }
+}
+StaticMethod.displayValue()
