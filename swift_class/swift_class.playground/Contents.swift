@@ -199,3 +199,34 @@ class StaticMethod {
     }
 }
 StaticMethod.displayValue()
+
+
+/// Subscript
+class Subscript {
+    var value = [1,2,3]
+    subscript(index: Int) -> Int {
+        get {
+            return self.value[index]
+        }
+        set(newValue) {
+            self.value[index] = newValue
+        }
+    }
+}
+var valueSubscript = Subscript()
+print(valueSubscript.value)
+print(valueSubscript[1])
+valueSubscript[1] = 10
+print(valueSubscript.value)
+
+//// Read Only Subscript
+class ReadOnlySubscript {
+    var value = [1,2,3]
+    subscript(index: Int) -> Int {
+        return self.value[index]
+    }
+}
+var valueReadOnlySubscript = ReadOnlySubscript()
+print(valueReadOnlySubscript.value)
+print(valueReadOnlySubscript[1])
+// valueReadOnlySubscript[1] = 10 // Error
