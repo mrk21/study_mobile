@@ -230,3 +230,21 @@ var valueReadOnlySubscript = ReadOnlySubscript()
 print(valueReadOnlySubscript.value)
 print(valueReadOnlySubscript[1])
 // valueReadOnlySubscript[1] = 10 // Error
+
+//// Multi Index Subscript
+class MultiIndexSubscript {
+    var value = [[1,2],[3,4]]
+    subscript(row: Int, column: Int) -> Int {
+        get {
+            return value[row][column]
+        }
+        set(newValue) {
+            self.value[row][column] = newValue
+        }
+    }
+}
+var valueMultiIndexSubscript = MultiIndexSubscript()
+print(valueMultiIndexSubscript.value)
+print(valueMultiIndexSubscript[0,1])
+valueMultiIndexSubscript[1,1] = 10
+print(valueMultiIndexSubscript.value)
