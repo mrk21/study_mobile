@@ -248,3 +248,30 @@ print(valueMultiIndexSubscript.value)
 print(valueMultiIndexSubscript[0,1])
 valueMultiIndexSubscript[1,1] = 10
 print(valueMultiIndexSubscript.value)
+
+
+// Extend
+class BaseClass {
+    var value1: Int
+    init() {
+        self.value1 = 1
+    }
+    func displayValue() {
+        print(self.value1)
+    }
+}
+
+class DerivedClass: BaseClass {
+    var value2: Int
+    override init() {
+        self.value2 = 2
+        super.init()
+    }
+    override func displayValue() {
+        super.displayValue()
+        print(self.value2)
+    }
+}
+
+var valueDerivedClass = DerivedClass()
+valueDerivedClass.displayValue()
