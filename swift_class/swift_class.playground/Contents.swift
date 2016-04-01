@@ -250,7 +250,7 @@ valueMultiIndexSubscript[1,1] = 10
 print(valueMultiIndexSubscript.value)
 
 
-// Extend
+// Inheritance
 class BaseClass {
     var value1: Int
     init() {
@@ -259,9 +259,12 @@ class BaseClass {
     func displayValue() {
         print(self.value1)
     }
+    final func display() {
+        self.displayValue()
+    }
 }
 
-class DerivedClass: BaseClass {
+final class DerivedClass: BaseClass {
     var value2: Int
     override init() {
         self.value2 = 2
@@ -271,7 +274,10 @@ class DerivedClass: BaseClass {
         super.displayValue()
         print(self.value2)
     }
+    // override func display() {} // Error
 }
+
+// class DerivedClass2: DerivedClass {} // Error
 
 var valueDerivedClass = DerivedClass()
 valueDerivedClass.displayValue()

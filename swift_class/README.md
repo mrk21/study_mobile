@@ -7,5 +7,6 @@
 * [プロパティ | Swift言語を学ぶ](http://tea-leaves.jp/swift/content/プロパティ)
 * [メソッド | Swift言語を学ぶ](http://tea-leaves.jp/swift/content/メソッド)
 * [サブスクリプト | Swift言語を学ぶ](http://tea-leaves.jp/swift/content/サブスクリプト)
+* [継承 | Swift言語を学ぶ](http://tea-leaves.jp/swift/content/継承)
 * [The Swift Programming Language (Swift 2.1): Properties](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Properties.html)
 * [Swiftで文字列の分割と連結 (split & join) - Qiita](http://qiita.com/yuch_i/items/76f4d15c03aa7ba3b391)
