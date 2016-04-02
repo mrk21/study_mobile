@@ -281,3 +281,24 @@ final class DerivedClass: BaseClass {
 
 var valueDerivedClass = DerivedClass()
 valueDerivedClass.displayValue()
+
+
+// Initializer
+/// Convenience Initializer
+class ConvenienceInitializer {
+    var birthday: Int
+    
+    init(birthday: Int) {
+        self.birthday = birthday
+    }
+    
+    convenience init(age: Int) {
+        let now = NSDate()
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "yyyy"
+        let currentYear = Int(formatter.stringFromDate(now))!
+        self.init(birthday: currentYear - age)
+    }
+}
+print(ConvenienceInitializer(birthday: 2000).birthday)
+print(ConvenienceInitializer(age: 22).birthday)
