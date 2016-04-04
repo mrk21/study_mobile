@@ -302,3 +302,29 @@ class ConvenienceInitializer {
 }
 print(ConvenienceInitializer(birthday: 2000).birthday)
 print(ConvenienceInitializer(age: 22).birthday)
+
+
+/// Required Initializer
+class RequiredInitializerBase {
+    var value: Int
+    required init(value: Int) {
+        self.value = value
+    }
+}
+print(RequiredInitializerBase(value: 1).value)
+
+// Error
+/*
+class RequiredInitializerDerived1: RequiredInitializerBase {
+   init() {
+       super.init(value: 2)
+   }
+}
+*/
+
+class RequiredInitializerDerived2: RequiredInitializerBase {
+    required init(value: Int) {
+       super.init(value: value*2)
+    }
+}
+print(RequiredInitializerDerived2(value: 2).value)
