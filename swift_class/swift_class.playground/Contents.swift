@@ -328,3 +328,16 @@ class RequiredInitializerDerived2: RequiredInitializerBase {
     }
 }
 print(RequiredInitializerDerived2(value: 2).value)
+
+
+/// Initialization by function object
+class FunctionObjectInitialization {
+    let values: [Int] = {
+        var result = [Int]()
+        for i in 1...10 {
+            result.append(i*i)
+        }
+        return result
+    }()
+}
+print(FunctionObjectInitialization().values)
