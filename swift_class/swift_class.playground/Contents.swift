@@ -341,3 +341,28 @@ class FunctionObjectInitialization {
     }()
 }
 print(FunctionObjectInitialization().values)
+
+
+// ARC
+class ARC {
+    init() {
+        print("ARC: created")
+    }
+    deinit {
+        print("ARC: destroyed")
+    }
+}
+var arc1, arc2, arc3: ARC?
+arc1 = ARC() // ARC: created
+print("arc1: assigned")
+arc2 = arc1
+print("arc2: assigned")
+arc3 = arc1
+print("arc3: assigned")
+
+arc1 = nil
+print("arc1: null")
+arc2 = nil
+print("arc2: null")
+arc3 = nil // ARC: destroyed
+print("arc3: null")
