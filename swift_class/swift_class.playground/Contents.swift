@@ -344,25 +344,53 @@ print(FunctionObjectInitialization().values)
 
 
 // ARC
-class ARC {
+/// Strong Reference
+class StrongReference {
     init() {
-        print("ARC: created")
+        print("StrongReference: created")
     }
     deinit {
-        print("ARC: destroyed")
+        print("StrongReference: destroyed")
     }
 }
-var arc1, arc2, arc3: ARC?
-arc1 = ARC() // ARC: created
-print("arc1: assigned")
-arc2 = arc1
-print("arc2: assigned")
-arc3 = arc1
-print("arc3: assigned")
+var sr1, sr2, sr3: StrongReference?
+sr1 = StrongReference() // StrongReference: created
+print("sr1: assigned")
+sr2 = sr1
+print("sr2: assigned")
+sr3 = sr1
+print("sr: assigned")
 
-arc1 = nil
-print("arc1: null")
-arc2 = nil
-print("arc2: null")
-arc3 = nil // ARC: destroyed
-print("arc3: null")
+sr1 = nil
+print("sr1: null")
+sr2 = nil
+print("sr2: null")
+sr3 = nil // StrongReference: destroyed
+print("sr3: null")
+
+
+/// Circular Reference
+class CircularReference1 {
+    var value: CircularReference2?
+    init() {
+        print("CircularReference1: create")
+    }
+    deinit {
+        print("CircularReference1: destroy") // never called!
+    }
+}
+class CircularReference2 {
+    var value: CircularReference1?
+    init() {
+        print("CircularReference2: create")
+    }
+    deinit {
+        print("CircularReference2: destroy") // never called!
+    }
+}
+var circularReference1: CircularReference1? = CircularReference1()
+var circularReference2: CircularReference2? = CircularReference2()
+circularReference1!.value = circularReference2
+circularReference2!.value = circularReference1
+circularReference1 = nil
+circularReference2 = nil
