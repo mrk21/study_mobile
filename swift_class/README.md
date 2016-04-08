@@ -9,7 +9,6 @@
 * [サブスクリプト | Swift言語を学ぶ](http://tea-leaves.jp/swift/content/サブスクリプト)
 * [継承 | Swift言語を学ぶ](http://tea-leaves.jp/swift/content/継承)
 * [イニシャライザ | Swift言語を学ぶ](http://tea-leaves.jp/swift/content/イニシャライザ)
-* [ARC | Swift言語を学ぶ](http://tea-leaves.jp/swift/content/arc)
 * [The Swift Programming Language (Swift 2.1): Properties](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Properties.html)
 * [Swiftで文字列の分割と連結 (split & join) - Qiita](http://qiita.com/yuch_i/items/76f4d15c03aa7ba3b391)
 * [[Swift]現在時刻の取得 - Qiita](http://qiita.com/ktanaka117/items/05b85307e0f3fb15e4bb)
