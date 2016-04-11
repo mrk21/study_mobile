@@ -56,7 +56,8 @@ circularReference2 = nil // memory leak!
 
 // Weak Reference
 class WeakReference1 {
-    weak var value: WeakReference2?
+    var value1 = 1
+    weak var ref2: WeakReference2?
     init() {
         print("WeakReference1: create")
     }
@@ -65,17 +66,28 @@ class WeakReference1 {
     }
 }
 class WeakReference2 {
-    var value: WeakReference1?
+    var value2 = 2
+    weak var ref1: WeakReference1?
     init() {
         print("WeakReference2: create")
     }
     deinit {
         print("WeakReference2: destroy")
     }
+    func displayRef1() {
+        if let value1 = self.ref1?.value1 {
+            print("ref1.value1: \(value1)")
+        }
+        else {
+            print("ref1: null")
+        }
+    }
 }
 var weakReference1: WeakReference1? = WeakReference1()
 var weakReference2: WeakReference2? = WeakReference2()
-weakReference1!.value = weakReference2
-weakReference2!.value = weakReference1
+weakReference1!.ref2 = weakReference2
+weakReference2!.ref1 = weakReference1
+weakReference2!.displayRef1()
 weakReference1 = nil // call deinitializer
+weakReference2!.displayRef1()
 weakReference2 = nil // call deinitializer
