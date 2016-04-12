@@ -91,3 +91,32 @@ weakReference2!.displayRef1()
 weakReference1 = nil // call deinitializer
 weakReference2!.displayRef1()
 weakReference2 = nil // call deinitializer
+
+
+// Unowned Reference
+class UnownedReference1 {
+    var value1 = 1
+    var ref2: UnownedReference2?
+    init() {
+        print("UnownedReference1: create")
+    }
+    deinit {
+        print("UnownedReference1: destroy")
+    }
+}
+class UnownedReference2 {
+    var value2 = 2
+    unowned var ref1: UnownedReference1
+    init(ref1: UnownedReference1) {
+        self.ref1 = ref1
+        print("UnownedReference2: create")
+    }
+    deinit {
+        print("UnownedReference2: destroy")
+    }
+}
+var unownedReference1: UnownedReference1? = UnownedReference1()
+var unownedReference2: UnownedReference2? = UnownedReference2(ref1: unownedReference1!)
+unownedReference1!.ref2 = unownedReference2
+unownedReference1 = nil // call deinitializer
+unownedReference2 = nil // call deinitializer
