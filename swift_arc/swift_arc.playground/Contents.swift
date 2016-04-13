@@ -120,3 +120,24 @@ var unownedReference2: UnownedReference2? = UnownedReference2(ref1: unownedRefer
 unownedReference1!.ref2 = unownedReference2
 unownedReference1 = nil // call deinitializer
 unownedReference2 = nil // call deinitializer
+
+
+// Circular Reference on Closure
+class CircularReferenceOnClosure {
+    var value1: Int
+    lazy var value2: () -> Int = {
+        return self.value1 * 2 // bind self forever!
+    }
+    init (value1: Int) {
+        self.value1 = value1
+        print("CircularReferenceOnClosure: create")
+    }
+    // never called!
+    deinit {
+        print("CircularReferenceOnClosure: destroy")
+    }
+}
+var circularReferenceOnClosure: CircularReferenceOnClosure? = CircularReferenceOnClosure(value1: 20)
+print(circularReferenceOnClosure!.value1)
+print(circularReferenceOnClosure!.value2())
+circularReferenceOnClosure = nil // memory leak!
