@@ -141,3 +141,22 @@ var circularReferenceOnClosure: CircularReferenceOnClosure? = CircularReferenceO
 print(circularReferenceOnClosure!.value1)
 print(circularReferenceOnClosure!.value2())
 circularReferenceOnClosure = nil // memory leak!
+
+// Unowned Closure
+class UnownedClosure {
+    var value1: Int
+    lazy var value2: () -> Int = {
+        [unowned self] in self.value1 * 2
+    }
+    init (value1: Int) {
+        self.value1 = value1
+        print("UnownedClosure: create")
+    }
+    deinit {
+        print("UnownedClosure: destroy")
+    }
+}
+var unownedClosure: UnownedClosure? = UnownedClosure(value1: 20)
+print(unownedClosure!.value1)
+print(unownedClosure!.value2())
+unownedClosure = nil
