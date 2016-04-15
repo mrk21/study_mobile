@@ -142,7 +142,7 @@ print(circularReferenceOnClosure!.value1)
 print(circularReferenceOnClosure!.value2())
 circularReferenceOnClosure = nil // memory leak!
 
-// Unowned Closure
+// Closure having unowned references
 class UnownedClosure {
     var value1: Int
     lazy var value2: () -> Int = {
@@ -160,3 +160,22 @@ var unownedClosure: UnownedClosure? = UnownedClosure(value1: 20)
 print(unownedClosure!.value1)
 print(unownedClosure!.value2())
 unownedClosure = nil
+
+// Closure having weak references
+class WeakClosure {
+    var value1: Int
+    lazy var value2: () -> Int = {
+        [weak self] in self!.value1 * 2
+    }
+    init (value1: Int) {
+        self.value1 = value1
+        print("WeakClosure: create")
+    }
+    deinit {
+        print("WeakClosure: destroy")
+    }
+}
+var weakClosure: WeakClosure? = WeakClosure(value1: 20)
+print(weakClosure!.value1)
+print(weakClosure!.value2())
+weakClosure = nil
