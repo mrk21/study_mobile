@@ -8,5 +8,6 @@
 * [SwiftのArrayが実はすばらしかった - Qiita - Vimperator](http://qiita.com/koher/items/47f444200d4e02b6414e)
 * [ディクショナリ | Swift言語を学ぶ](http://tea-leaves.jp/swift/content/ディクショナリ)
 * [オプショナル型 | Swift言語を学ぶ](http://tea-leaves.jp/swift/content/オプショナル型)
+* [オプショナルの連鎖 | Swift言語を学ぶ](http://tea-leaves.jp/swift/content/オプショナルの連鎖)
 * [タイプエイリアス | Swift言語を学ぶ](http://tea-leaves.jp/swift/content/タイプエイリアス)
 * [列挙型 | Swift言語を学ぶ](http://tea-leaves.jp/swift/content/列挙型)

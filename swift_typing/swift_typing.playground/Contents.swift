@@ -234,6 +234,15 @@ print(value_optional9 ?? "-")
 value_optional9 = 1
 print(value_optional9 ?? "-")
 
+/// Optional type chaining
+class OptionalTypeChaining {
+    var value2: Int = 1
+}
+var optionalTypeChaining: OptionalTypeChaining? = nil
+//print(optionalTypeChaining!.value2) // Error
+print(optionalTypeChaining?.value2) // nil
+optionalTypeChaining = OptionalTypeChaining()
+print(optionalTypeChaining?.value2) // Optional(1)
 
 // Type alias
 typealias Number = Int
