@@ -334,3 +334,17 @@ func func_func2(value: String) {
     print(value)
 }
 // value_func1 = func_func2 // Error
+
+// Type Casting
+class TypeCasting1 {
+    var value1 = 1
+}
+class TypeCasting2: TypeCasting1 {
+    var value2 = 2
+}
+var typeCasting2: TypeCasting2 = TypeCasting2()
+print(typeCasting2.value1)
+print(typeCasting2.value2)
+var typeCasting1: TypeCasting1 = typeCasting2 as TypeCasting1
+print(typeCasting1.value1)
+//print(typeCasting1.value2) // Error

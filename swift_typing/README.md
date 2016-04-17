@@ -11,3 +11,4 @@
 * [オプショナルの連鎖 | Swift言語を学ぶ](http://tea-leaves.jp/swift/content/オプショナルの連鎖)
 * [タイプエイリアス | Swift言語を学ぶ](http://tea-leaves.jp/swift/content/タイプエイリアス)
 * [列挙型 | Swift言語を学ぶ](http://tea-leaves.jp/swift/content/列挙型)
+* [型キャスト | Swift言語を学ぶ](http://tea-leaves.jp/swift/content/型キャスト)
