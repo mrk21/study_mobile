@@ -348,3 +348,11 @@ print(typeCasting2.value2)
 var typeCasting1: TypeCasting1 = typeCasting2 as TypeCasting1
 print(typeCasting1.value1)
 //print(typeCasting1.value2) // Error
+
+/// as? operator
+class TypeCasting3 {
+    var value3 = 3
+}
+var typeCasting3: TypeCasting3 = TypeCasting3()
+print(typeCasting2 as? TypeCasting1) // Optional(TypeCasting2)
+print(typeCasting3 as? TypeCasting1) // nil
