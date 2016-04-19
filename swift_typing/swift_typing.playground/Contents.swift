@@ -356,3 +356,8 @@ class TypeCasting3 {
 var typeCasting3: TypeCasting3 = TypeCasting3()
 print(typeCasting2 as? TypeCasting1) // Optional(TypeCasting2)
 print(typeCasting3 as? TypeCasting1) // nil
+
+
+/// is operator
+print(1 is Int) // true
+print(1 is String) // false
